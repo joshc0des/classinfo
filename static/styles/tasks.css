@@ -1,0 +1,236 @@
+:root {
+  --primary: #841617;
+  --course1: #3a82ee;
+  --course2: orange;
+  --course3: green;
+  --course4: pink;
+  --course5: purple;
+  --course6: grey;
+  --light: #eee;
+  --dark: #16161f;
+  --danger: #ff5b57;
+
+  --shadow: 0 1px 3px rbga(0, 0, 0, 0.1);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+input:not([type="radio"]):not([type="checkbox"]),
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
+}
+body {
+  color: var(--dark);
+}
+section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+h3 {
+  color: var(--dark);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+h4 {
+  color: var(--dark);
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.greeting .title {
+  display: flex;
+}
+.greeting .title input {
+  margin-left: 0.5rem;
+  flex: 1 1 0%;
+  min-width: 0;
+}
+.greeting .title,
+.greeting .title input {
+  color: var(--dark);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.makeTasks input[type="text"] {
+  display: block;
+  width: 100%;
+  font-size: 1.125rem;
+  padding: 1rem 1.5rem;
+  color: var(--dark);
+  background-color: #eee;
+  border-radius: 0.5rem;
+  box-sizing: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+.makeTasks #courses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.makeTasks #courses label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: #eee;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+.optionCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--course1);
+}
+.optionCard.course2 {
+  border-color: var(--course2);
+}
+.optionCard.course3 {
+  border-color: var(--course3);
+}
+.optionCard.course4 {
+  border-color: var(--course4);
+}
+.optionCard.course5 {
+  border-color: var(--course5);
+}
+.optionCard.course6 {
+  border-color: var(--course6);
+}
+.optionCard::after {
+  content: "";
+  display: block;
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  background-color: var(--course1);
+  border-radius: 50%;
+  transition: 0.2s ease-in-out;
+}
+.optionCard.course2::after {
+  background-color: var(--course2);
+}
+.optionCard.course3::after {
+  background-color: var(--course3);
+}
+.optionCard.course4::after {
+  background-color: var(--course4);
+}
+.optionCard.course5::after {
+  background-color: var(--course5);
+}
+.optionCard.course6::after {
+  background-color: var(--course6);
+}
+input:checked ~ .optionCard::after {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+.makeTasks #courses label div {
+  color: var(--dark);
+  font-size: 1.125rem;
+  margin-top: 1rem;
+}
+.makeTasks input[type="submit"] {
+  display: block;
+  width: 100%;
+  font-size: 1.125rem;
+  padding: 1rem 1.5rem;
+  color: #eee;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.makeTasks input[type="submit"]:hover {
+  opacity: 0.75;
+}
+.taskList .list {
+  margin: 1rem 0;
+}
+.taskList .listItem {
+  display: flex;
+  align-items: center;
+  background-color: #eee;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+.listItem label {
+  display: block;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.listItem .listContent {
+  flex: 1 1 0%;
+}
+.listItem .listContent input {
+  color: var(--dark);
+  font-size: 1.125rem;
+}
+.listItem .actions {
+  display: flex;
+  align-items: center;
+}
+.listItem .actions button {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  color: #eee;
+  cursor: pointer;
+  transition: ease-in-out;
+}
+.listItem .actions button:hover {
+  opacity: 0.75;
+}
+.listItem .actions .edit {
+  margin-right: 0.5rem;
+  background-color: var(--course1);
+}
+.listItem .actions .delete {
+  background-color: var(--danger);
+}
+.listItem.done .listContent input {
+  text-decoration: line-through;
+  color: var(--course6);
+}
+#footerDiv {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f8f9fa;
+}
+#misimg {
+  width: 650px;
+}
+#misimgDiv {
+  align-self: flex-start;
+  margin-left: 25px;
+}
+#info {
+  font-size: 14pt;
+  color: grey;
+  height: 75px;
+  line-height: 75px;
+  margin-right: 25px;
+}

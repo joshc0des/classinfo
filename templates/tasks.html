@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/tasks.css') }}" />
+    <title>Tasks</title>
+  </head>
+  <body>
+    <header>
+      <div class="px-3 py-2 text-bg-light">
+        <div class="container">
+          <div
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+          >
+            <a
+              href="/"
+              class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
+            >
+              <img
+                src="{{ url_for('static',filename='images/projectLogo.svg') }}"
+                alt="Project Logo"
+                width="40"
+              />
+            </a>
+
+            <ul
+              class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
+            >
+              <li>
+                <a href="#" class="nav-link text-dark">
+                  <lord-icon
+                    src="https://cdn.lordicon.com/gmzxduhd.json"
+                    trigger="hover"
+                    colors="primary:#121331,secondary:#841617"
+                    stroke="95"
+                    state="hover"
+                    style="width: 40px; height: 40px"
+                  >
+                  </lord-icon>
+                  <br />
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="nav-link text-dark"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 0;
+                    margin-left: 10px;
+                  "
+                >
+                  <lord-icon
+                    src="https://cdn.lordicon.com/wloilxuq.json"
+                    trigger="hover"
+                    colors="primary:#121331,secondary:#841617"
+                    state="hover-2"
+                    style="
+                      width: 50px;
+                      height: 50px;
+                      align-self: center;
+                      margin-top: 3px;
+                    "
+                  >
+                  </lord-icon>
+                  <div
+                    style="
+                      height: 25px;
+                      align-self: center;
+                      line-height: 25px;
+                      margin-bottom: 0px;
+                      margin-top: 0px;
+                    "
+                  >
+                    Edit Courses
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="nav-link text-dark"
+                  style="margin-left: 10px"
+                >
+                  <lord-icon
+                    src="https://cdn.lordicon.com/anihkfxp.json"
+                    trigger="hover"
+                    colors="primary:#121331,secondary:#841617"
+                    stroke="80"
+                    style="width: 40px; height: 40px"
+                  >
+                    >
+                  </lord-icon>
+                  <br />
+                  Tasks
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- main area -->
+    <main class="taskApp">
+      <!-- greeting -->
+      <section class="greeting">
+        <h2 class="title">
+          Hello, <input type="text" id="name" placeholder="Your name here" />
+        </h2>
+      </section>
+
+      <!-- create tasks -->
+      <section class="makeTasks">
+        <h3>Create a task!</h3>
+        <form id="newTaskForm">
+          <h4>What task would you like to add?</h4>
+          <input
+            type="text"
+            name="newTask"
+            id="newTask"
+            placeholder="i.e. study for exam 3"
+          />
+          <h4>Pick a class</h4>
+          <div id="courses">
+            <label>
+              <input
+                type="radio"
+                name="course"
+                id="category1"
+                value="course1"
+              />
+              <span class="optionCard course1"></span>
+              <div id="Course1">first course</div>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="course"
+                id="category2"
+                value="course2"
+              />
+              <span class="optionCard course2"></span>
+              <div id="Course2">second course</div>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="course"
+                id="category3"
+                value="course3"
+              />
+              <span class="optionCard course3"></span>
+              <div id="Course3">third course</div>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="course"
+                id="category4"
+                value="course4"
+              />
+              <span class="optionCard course4"></span>
+              <div id="Course4">fourth course</div>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="course"
+                id="category5"
+                value="course5"
+              />
+              <span class="optionCard course5"></span>
+              <div id="Course5">fifth course</div>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="course"
+                id="category6"
+                value="course6"
+              />
+              <span class="optionCard course6"></span>
+              <div id="Course6">sixth course</div>
+            </label>
+          </div>
+          <!-- end of course selection -->
+
+          <input type="submit" value="Create task" />
+        </form>
+      </section>
+
+      <!-- task list -->
+      <section class="taskList">
+        <h3>Your Tasks</h3>
+        <div class="list" id="taskList"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div id="footerDiv">
+        <div id="misimgDiv">
+          <img
+            src="{{ url_for('static',filename='images/MIS.png') }}"
+            alt="MIS at the university of oklahoma"
+            id="misimg"
+          />
+        </div>
+        <div id="info">
+          This project was developed by Blake Hays and Joshua Hooper
+        </div>
+      </div>
+    </footer>
+  </body>
+<script src="main.js"></script>
+</html>

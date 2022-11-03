@@ -18,7 +18,7 @@ class Sections(db.Model):
     wait_list = db.Column(db.String(200), nullable=True)
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
     return "<h1>Home Page</h1>"
 
@@ -26,6 +26,11 @@ def home():
 @app.route('/inputs', methods=['GET', 'POST'])
 def inputs():
     return render_template('edit.html')
+
+
+@app.route('/tasks', methods=['GET', 'POST'])
+def tasks():
+    return render_template('tasks.html')
 
 
 if __name__ == '__main__':
