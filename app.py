@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import json
 
@@ -41,11 +41,15 @@ class Sections(db.Model):
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    return "<h1>Home Page</h1>"
+    if request.method == 'POST':
+        return redirect(url_for('edit'))
+    return render_template('home.html')
 
 
 @app.route('/edit', methods=['GET', 'POST'])
 def edit():
+    if request.method == 'POST':
+        return redirect(url_for('tasks'))
     return render_template('edit.html')
 
 

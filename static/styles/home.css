@@ -1,0 +1,61 @@
+#title {
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+form {
+  margin: 0 auto;
+  width: 300px;
+}
+input {
+  margin-top: 5px;
+}
+body {
+  position: relative;
+}
+
+body::after {
+  content: "";
+  display: block;
+  height: 76px; /* Set same as footer's height */
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: none;
+  color: white;
+  text-align: center;
+}
+#misimg {
+  width: 650px;
+}
+#footerDiv {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: none;
+  color: white;
+  text-align: center;
+}
+#misimgDiv {
+  align-self: flex-start;
+  margin-left: 25px;
+}
+#info {
+  font-size: 14pt;
+  color: grey;
+  height: 75px;
+  line-height: 75px;
+  margin-right: 25px;
+}
+#formContainer {
+  margin-bottom: 225px;
+}
+.btn-danger {
+  margin: 5px auto;
+  width: 300px;
+  background-color: #841617 !important;
+}
