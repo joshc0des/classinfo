@@ -18,7 +18,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='styles/edit.css') }}" />
-    <title>Input</title>
+    <title>CISS - Input</title>
   </head>
   <body>
     <header>
@@ -122,44 +122,91 @@
       <h1>Enter your course CRNs below:</h1>
     </div>
     <div id="formContainer">
-      <form action="#enterURL of next page" method="post">
-        <input
-          class="form-control form-control-lg"
-          placeholder="CRN 1: "
-          aria-label="crn 1"
-          id="crn1"
-        />
-        <input
-          class="form-control form-control-lg"
-          placeholder="CRN 2: "
-          aria-label="crn 2"
-          id="crn2"
-        />
-        <input
-          class="form-control form-control-lg"
-          placeholder="CRN 3: "
-          aria-label="crn 3"
-          id="crn3"
-        />
-        <input
-          class="form-control form-control-lg"
-          placeholder="CRN 4: "
-          aria-label="crn 4"
-          id="crn4"
-        />
-        <input
-          class="form-control form-control-lg"
-          placeholder="CRN 5: "
-          aria-label="crn 5"
-          id="crn5"
-        />
-        <input
-          class="form-control form-control-lg"
-          placeholder="CRN 6: "
-          aria-label="crn 6"
-          id="crn6"
-        />
-        <button type="submit" class="btn btn-danger">Submit</button>
+      <form action="{{ url_for('tasks') }}" method="post">
+        {{ form.csrf_token }}
+
+
+        {% if form.crn1.errors %}
+          {{ form.crn1(class_="form-control form-control-lg is-invalid", placeholder="CRN 1: ", autocomplete="off") }}
+            <div class="invalid-feedback">
+                {% for error in form.crn1.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+          {% else %}
+            {{ form.crn1(class_="form-control form-control-lg", placeholder="CRN 1: ", autocomplete="off") }}
+        {% endif %}
+
+
+        {% if form.crn2.errors %}
+          {{ form.crn2(class_="form-control form-control-lg is-invalid", placeholder="CRN 2: ", autocomplete="off") }}
+            <div class="invalid-feedback">
+                {% for error in form.crn2.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+          {% else %}
+            {{ form.crn2(class_="form-control form-control-lg", placeholder="CRN 2: ", autocomplete="off") }}
+        {% endif %}
+
+
+        {% if form.crn3.errors %}
+          {{ form.crn3(class_="form-control form-control-lg is-invalid", placeholder="CRN 3: ", autocomplete="off") }}
+            <div class="invalid-feedback">
+                {% for error in form.crn3.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+          {% else %}
+            {{ form.crn3(class_="form-control form-control-lg", placeholder="CRN 3: ", autocomplete="off") }}
+        {% endif %}
+
+
+        {% if form.crn4.errors %}
+          {{ form.crn4(class_="form-control form-control-lg is-invalid", placeholder="CRN 4: ", autocomplete="off") }}
+            <div class="invalid-feedback">
+                {% for error in form.crn4.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+          {% else %}
+            {{ form.crn4(class_="form-control form-control-lg", placeholder="CRN 4: ", autocomplete="off") }}
+        {% endif %}
+
+
+        {% if form.crn5.errors %}
+          {{ form.crn5(class_="form-control form-control-lg is-invalid", placeholder="CRN 5: ", autocomplete="off") }}
+            <div class="invalid-feedback">
+                {% for error in form.crn5.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+          {% else %}
+            {{ form.crn5(class_="form-control form-control-lg", placeholder="CRN 5: ", autocomplete="off") }}
+        {% endif %}
+
+
+        {% if form.crn6.errors %}
+          {{ form.crn6(class_="form-control form-control-lg is-invalid", placeholder="CRN 6: ", autocomplete="off") }}
+            <div class="invalid-feedback">
+                {% for error in form.crn6.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+          {% else %}
+            {{ form.crn6(class_="form-control form-control-lg", placeholder="CRN 6: ", autocomplete="off") }}
+        {% endif %}
+
+        <button type="submit" class="btn btn-danger" >Submit</button>
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+          {% endwith %}
       </form>
     </div>
     <footer>

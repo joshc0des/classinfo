@@ -1,10 +1,13 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, flash, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import json
+from forms import CourseForm
+import os
 
-
+basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sections.db'
+app.config['SECRET_KEY'] = "adg986df7s98h7fg89hsh"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'sections.db')
 db = SQLAlchemy(app)
 
 
@@ -24,8 +27,8 @@ class Sections(db.Model):
         return f'<Class CRN {self.crn}>'
 
 
-# f = open('datatablesdata.json')
 # # this takes 10159 courses from json and puts them into the db file
+# f = open('datatablesdata.json')
 # data = json.load(f)
 # with app.app_context():
 #     db.drop_all()
@@ -48,16 +51,52 @@ def home():
 
 @app.route('/edit', methods=['GET', 'POST'])
 def edit():
-    if request.method == 'POST':
+    form = CourseForm()
+
+    if form.validate_on_submit():
         return redirect(url_for('tasks'))
-    return render_template('edit.html')
+
+    return render_template('edit.html', form=form)
 
 
 @app.route('/tasks', methods=['GET', 'POST'])
 def tasks():
+    crns = []
+    if request.method == "POST":
+        crn1 = request.form.get("crn1")
+        if len(crn1) == 5:
+            crns.append(crn1)
+
+        crn2 = request.form.get("crn2")
+        if len(crn2) == 5:
+            crns.append(crn2)
+
+        crn3 = request.form.get("crn3")
+        if len(crn3) == 5:
+            crns.append(crn3)
+
+        crn4 = request.form.get("crn4")
+        if len(crn4) == 5:
+            crns.append(crn4)
+
+        crn5 = request.form.get("crn5")
+        if len(crn5) == 5:
+            crns.append(crn5)
+
+        crn6 = request.form.get("crn6")
+        if len(crn6) == 5:
+            crns.append(crn6)
+        print(crns[0])
+        print(Sections.query.filter(Sections.crn == crns[0]))
+
     return render_template('tasks.html')
 
 
-@app.route('/table', methods=['GET', 'POST'])
-def table():
-    return render_template('tasks.html')
+@app.route('/priceClassesSeats', methods=['GET', 'POST'])
+def priceClassesSeats():
+    return render_template('priceClassesSeats.html')
+
+
+@app.route('/numberOfSeats', methods=['GET', 'POST'])
+def numberOfSeats():
+    return render_template('numberOfSeats.html')
