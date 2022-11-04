@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/data.css') }}" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+    <title>Home</title>
+  </head>
+  <body>
+    <header>
+      <div class="px-3 py-2 text-bg-light">
+        <div class="container">
+          <div
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+          >
+            <a
+              href="/"
+              class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
+            >
+              <img
+                src="{{ url_for('static',filename='images/projectLogo.svg') }}"
+                alt="Project Logo"
+                width="40"
+              />
+            </a>
+
+            <ul
+              class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
+            >
+              <li>
+                <a href="#" class="nav-link text-dark">
+                  <lord-icon
+                    src="https://cdn.lordicon.com/gmzxduhd.json"
+                    trigger="hover"
+                    colors="primary:#121331,secondary:#841617"
+                    stroke="95"
+                    state="hover"
+                    style="width: 40px; height: 40px"
+                  >
+                  </lord-icon>
+                  <br />
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="nav-link text-dark"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 0;
+                    margin-left: 10px;
+                  "
+                >
+                  <lord-icon
+                    src="https://cdn.lordicon.com/wloilxuq.json"
+                    trigger="hover"
+                    colors="primary:#121331,secondary:#841617"
+                    state="hover-2"
+                    style="
+                      width: 50px;
+                      height: 50px;
+                      align-self: center;
+                      margin-top: 3px;
+                    "
+                  >
+                  </lord-icon>
+                  <div
+                    style="
+                      height: 25px;
+                      align-self: center;
+                      line-height: 25px;
+                      margin-bottom: 0px;
+                      margin-top: 0px;
+                    "
+                  >
+                    Edit Courses
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="nav-link text-dark"
+                  style="margin-left: 10px"
+                >
+                  <lord-icon
+                    src="https://cdn.lordicon.com/anihkfxp.json"
+                    trigger="hover"
+                    colors="primary:#121331,secondary:#841617"
+                    stroke="80"
+                    style="width: 40px; height: 40px"
+                  >
+                    >
+                  </lord-icon>
+                  <br />
+                  Tasks
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-dark">
+                  <lord-icon
+                    src="https://cdn.lordicon.com/ryxufmfd.json"
+                    trigger="hover"
+                    colors="primary:#121331,secondary:#841617"
+                    style="width: 40px; height: 40px"
+                  >
+                  </lord-icon>
+                  <br />
+                  Seats
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-dark">
+                  <lord-icon
+                    src="https://cdn.lordicon.com/gqdnbnwt.json"
+                    trigger="hover"
+                    colors="primary:#121331,secondary:#841617"
+                    style="width: 40px; height: 40px"
+                  >
+                  </lord-icon>
+                  <br />
+                  Data
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="cContain">
+      <div class="card" style="width: 26rem">
+        <div class="card-body">
+          <h5 class="card-title">Price Classes</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Specially made for Price College students!
+          </h6>
+          <p class="card-text">
+            Here you will find an interactive display of the most comomon
+            subjects in Price College. Price students can see which subject is
+            filling up the quickest, and they can use the interactive bubble
+            chart to view courses that still have plenty of room.
+          </p>
+          <a href="linkBubbleChart" class="card-link">Find it here</a>
+        </div>
+      </div>
+      <div class="card" style="width: 26rem">
+        <div class="card-body">
+          <h5 class="card-title">Full Data View</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">
+            If you like to have a visual of which subjects are filling up the
+            quickest, have the most seats available, or are just curious about
+            the info, this is a great place to start.
+          </p>
+          <a href="linkBigGraph" class="card-link">Find it here</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div id="misimgDiv">
+        <img
+          src="MIS.png"
+          alt="MIS at the university of oklahoma"
+          id="{{ url_for('static',filename='images/MIS.png') }}"
+        />
+      </div>
+      <div id="info">
+        This project was developed by Blake Hays and Joshua Hooper
+      </div>
+    </footer>
+  </body>
+</html>

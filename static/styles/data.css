@@ -1,0 +1,50 @@
+:root {
+    --dark: #16161f;
+    --light: #eee;
+    --shadow: 0 1px 3px rbga(0, 0, 0, 0.1);
+}
+h1 {
+    margin-left: 1rem;
+}
+h2 {
+    margin-left: 1rem;
+}
+h3 {
+    margin-left: 1rem;
+
+}
+html {
+    height: 100%;
+}
+body {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: [footer-height];
+}
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    position: absolute; 
+    left: 0 ; right: 0; bottom: 0; 
+    height:[footer-height];
+    background-color: #f8f9fa;
+  }
+  #misimg {
+    width: 650px;
+  }
+  #misimgDiv {
+    align-self: flex-start;
+    margin-left: 25px;
+  }
+  #info {
+    font-size: 14pt;
+    color: grey;
+    height: 75px;
+    line-height: 75px;
+    margin-right: 25px;
+  }
+  .cContain {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20vh;
+  }

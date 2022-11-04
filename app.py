@@ -86,8 +86,8 @@ def tasks():
         crn6 = request.form.get("crn6")
         if len(crn6) == 5:
             crns.append(crn6)
-        print(crns[0])
-        print(Sections.query.filter(Sections.crn == crns[0]))
+        # print(crns[0])
+        # print(Sections.query.filter(Sections.crn == crns[0]).all())
 
     return render_template('tasks.html')
 
@@ -100,3 +100,8 @@ def priceClassesSeats():
 @app.route('/numberOfSeats', methods=['GET', 'POST'])
 def numberOfSeats():
     return render_template('numberOfSeats.html')
+
+
+@app.route('/data', methods=['GET', 'POST'])
+def data():
+    return render_template('data.html')
